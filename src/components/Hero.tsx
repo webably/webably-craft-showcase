@@ -49,6 +49,10 @@ const Hero = () => {
               variant="hero" 
               size="lg" 
               className="group text-lg px-8 py-6"
+              onClick={() => {
+                const element = document.querySelector('#contact');
+                element?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Start Your Project
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -58,6 +62,10 @@ const Hero = () => {
               variant="outline" 
               size="lg" 
               className="text-lg px-8 py-6 border-primary-glow/30 hover:border-primary-glow hover:bg-primary-glow/10"
+              onClick={() => {
+                const element = document.querySelector('#portfolio');
+                element?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               View Our Work
             </Button>

@@ -26,13 +26,16 @@ const Navigation = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.href}
-                  href={item.href}
+                  onClick={() => {
+                    const element = document.querySelector(item.href);
+                    element?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className="text-foreground hover:text-primary-glow px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
                 >
                   {item.label}
-                </a>
+                </button>
               ))}
             </div>
           </div>
@@ -60,14 +63,17 @@ const Navigation = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.href}
-                  href={item.href}
-                  className="text-foreground hover:text-primary-glow block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    const element = document.querySelector(item.href);
+                    element?.scrollIntoView({ behavior: 'smooth' });
+                    setIsOpen(false);
+                  }}
+                  className="text-foreground hover:text-primary-glow block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 w-full text-left"
                 >
                   {item.label}
-                </a>
+                </button>
               ))}
               <div className="pt-2">
                 <Button variant="gradient" size="sm" className="w-full">
